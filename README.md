@@ -1,3 +1,4 @@
-# imp-interpreter
+# Lazy FL
 
-- deployed [here](https://sano-jin.github.io/imp/imp)
+From "Implementation of functional programming language"
+
