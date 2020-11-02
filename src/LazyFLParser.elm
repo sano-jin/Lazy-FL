@@ -4,27 +4,12 @@ import Parser exposing (..)
 import Char
 import Set
 import Util exposing (..)
+import Syntax
 
-type AExp = Num Int
-          | Var String
-          | Sum AExp AExp
-          | Mul AExp AExp
-            
-type BExp = Bool Bool
-          | Le AExp AExp
-          | Not BExp
-          | And BExp BExp
+-- | parse
+parse : String -> CoreProgram
+parse = syntax << lex
 
-type alias Commands = List Command
-            
-type Command = Skip
-             | Update String AExp
-             | If BExp Commands Commands
-             | While BExp Commands
-
-type alias State = List (String, Int)
-   
-                 
 -- Lexer
 lexeme : Parser a -> Parser a
 lexeme p = p |. spaces 
